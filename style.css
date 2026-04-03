@@ -1,0 +1,649 @@
+/* ========== RESET & BASE ========== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #8f7748;
+    --second-color: #606060;
+    --grey1: #808080;
+    --white: #fff;
+    --background-color: #f4f4ee;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--main-color);
+    font-family: Faustina, serif;
+    max-width: 520px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+pre {
+    font-family: Faustina, serif;
+}
+
+/* ========== LOADING ========== */
+.back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    animation-name: backdiv;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart_loading {
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+.heart_loading::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 25px;
+}
+
+.heart_loading::before {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0;
+}
+
+@keyframes backdiv {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}
+
+/* ========== HEARTS FLOATING ========== */
+#hearts-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.hearts {
+    width: 5%;
+    min-width: 20px;
+    height: 25%;
+    min-height: 100px;
+    position: absolute;
+    z-index: 10;
+}
+
+.heart {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b9d;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>');
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: fly 8s linear infinite;
+    opacity: 0;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+        bottom: -50px;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* ========== GENERAL CARD ========== */
+#invitation_card {
+    background-color: var(--background-color);
+    color: var(--main-color);
+    font-family: Faustina, serif;
+}
+
+.bg-default {
+    background-color: var(--background-color);
+}
+
+/* ========== CARD SECTIONS ========== */
+.card-section {
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========== POPUPS ========== */
+#initial_popup {
+    background-image: url('images/bg_init.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#evelope_card {
+    background-image: url('images/popup_card.gif');
+    background-size: cover;
+    background-position: center;
+    min-width: 320px;
+    min-height: 240px;
+    cursor: pointer;
+    /* Mobile responsive */
+}
+
+@media screen and (max-width: 768px) {
+    #evelope_card {
+        min-width: 300px;
+        min-height: 220px;
+    }
+}
+
+/* ========== TEXT STYLES ========== */
+.text-inform {
+    font-size: 11px;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    color: var(--main-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ========== INFORM SECTION ========== */
+.inform-section {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* ========== COUNTDOWN ========== */
+.count-down-badge {
+    font-size: 20px;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--main-color);
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.countdown-panel {
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 15px 5px 10px;
+    text-align: center;
+    height: 115px;
+    width: 75px;
+    margin: 10px 4px;
+    border-radius: 12px;
+    cursor: default;
+    border: 1px solid var(--main-color);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    background: white;
+}
+
+.countdown-panel .number_countdown {
+    color: var(--main-color) !important;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+}
+
+.count-label {
+    font-size: 0.75rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    display: block;
+    font-weight: 600;
+}
+
+/* ========== BUTTONS ========== */
+.btn-send {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.btn-send:hover {
+    background-color: #7a6438;
+    transform: translateY(-1px);
+}
+
+.btn-send:active {
+    transform: translateY(0);
+}
+
+/* ========== RADIO inputs attendance ========== */
+#guest_comming_yes:checked~.guest_comming_yes .option_border,
+#guest_comming_no:checked~.guest_comming_no .option_border {
+    background-color: #fff;
+    border: 2px solid var(--main-color) !important;
+    background-color: #fdf8f0;
+}
+
+.option_border {
+    transition: all 0.3s ease;
+}
+
+.option_border:hover {
+    border-color: var(--main-color) !important;
+    background-color: #fdf8f0;
+}
+
+/* ========== GUEST COUNT BUTTONS ========== */
+.guest-count-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+.guest-count-btn {
+    background-color: var(--main-color);
+    color: white;
+    border-color: var(--main-color) !important;
+}
+
+/* ========== WISH LIST ========== */
+#div_list_wish {
+    height: 450px;
+    overflow-y: auto;
+    font-family: Faustina, serif;
+    scrollbar-width: thin;
+    scrollbar-color: #d4b896 transparent;
+}
+
+#div_list_wish::-webkit-scrollbar {
+    width: 6px;
+}
+
+#div_list_wish::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#div_list_wish::-webkit-scrollbar-thumb {
+    background: #d4b896;
+    border-radius: 3px;
+}
+
+.wish-list-item {
+    background-image: url('images/bg_wish_list.webp');
+    background-size: 350px 100px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    transition: background-color 0.2s;
+}
+
+.wish-list-item:hover {
+    background-color: #fdf8f0;
+}
+
+/* ========== ARROW (CSS chevron như bản gốc) ========== */
+.arrow {
+    position: relative;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.arrow:after {
+    content: " ";
+    position: absolute;
+    top: -100px;
+    left: calc(50% - 14px);
+    width: 40px;
+    height: 40px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    color: #fff;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* ========== QR SECTION ========== */
+#section_qr_bank {
+    background-image: url('images/bg_qr_bank.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--background-color);
+}
+
+.text_info_bank {
+    line-height: 1.6;
+}
+
+/* ========== SIDE SELECTION ========== */
+#side_bride:checked~.side_bride,
+#size_broom:checked~.size_broom {
+    border: 2px solid var(--main-color);
+}
+
+.side_bride,
+.size_broom {
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid #e8d5b0;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+/* ========== FORM INPUTS ========== */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: var(--main-color) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(143, 119, 72, 0.1);
+    transition: all 0.3s;
+}
+
+/* ========== CAROUSEL ========== */
+#content-carousel {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    #content-carousel {
+        height: 500px;
+    }
+}
+
+.carousel-slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-dot.active {
+    opacity: 1 !important;
+    transform: scale(1.3);
+}
+
+/* ========== MUSIC PLAYER ========== */
+#music_player {
+    animation: pulse-music 2s ease-in-out infinite;
+}
+
+@keyframes pulse-music {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(143, 119, 72, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 25px rgba(143, 119, 72, 0.7);
+    }
+}
+
+/* ========== NOTIFICATION TOAST ========== */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #8f7748;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: Faustina, serif;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 9999;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+#toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4b896;
+    border-radius: 3px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 480px) {
+    body {
+        max-width: 100%;
+    }
+
+    .countdown-panel {
+        width: 65px;
+        height: 105px;
+        margin: 5px 3px;
+    }
+
+    .countdown-panel .number_countdown {
+        font-size: 30px;
+    }
+
+    .count-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* ========== GLOW EFFECT ========== */
+@keyframes glow {
+    0% {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #e60073,
+            0 0 40px #e60073;
+    }
+
+    100% {
+        text-shadow:
+            0 0 20px #fff,
+            0 0 30px #ff4da6,
+            0 0 40px #ff4da6,
+            0 0 50px #ff4da6;
+    }
+}
+
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* ========== PHOTO UPLOAD PREVIEW ========== */
+#photo_preview_section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.photo-preview-item {
+    width: calc(33.33% - 7px);
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e8d5b0;
+}
+
+.photo-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
