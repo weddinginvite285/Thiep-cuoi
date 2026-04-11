@@ -257,6 +257,7 @@ document.addEventListener('change', function (e) {
 function submitConfirmation() {
     const name = document.getElementById('guest_name').value.trim();
     const attendance = document.querySelector('input[name="attendance"]:checked');
+    const sideInput = document.querySelector('input[name="guest_side"]:checked');
 
     if (!name) {
         showToast('Vui lòng nhập tên của bạn! 😊');
@@ -269,16 +270,31 @@ function submitConfirmation() {
         return;
     }
 
-    // Show success message
+    // Disable nút, hiện đang gửi
     const btn = document.getElementById('btn_confirm');
     btn.textContent = '⏳ Đang gửi...';
     btn.disabled = true;
 
+    const attending = attendance.value === 'yes';
+    const side = sideInput ? (sideInput.value === 'groom' ? 'Nhà Trai' : 'Nhà Gái') : 'Chưa chọn';
+
+    // Gửi lên Google Sheets
+    fetch(GAS_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+            type: 'rsvp',
+            name: name,
+            side: side,
+            attending: attending ? 'Có đến' : 'Không đến'
+        }),
+        headers: { 'Content-Type': 'text/plain' }
+    }).catch(function() { /* ignore network error */ });
+
+    // Hiện thông báo thành công
     setTimeout(function () {
         btn.style.display = 'none';
         document.getElementById('confirm_success').style.display = 'block';
 
-        const attending = attendance.value === 'yes';
         const msg = document.getElementById('confirm_success');
         if (!attending) {
             msg.innerHTML = `
@@ -291,7 +307,7 @@ function submitConfirmation() {
         }
 
         showToast(attending ? '🎉 Cảm ơn bạn sẽ đến!' : '💌 Cảm ơn bạn đã thông báo!');
-    }, 1000);
+    }, 800);
 }
 
 // ========== WISH FORM ==========
