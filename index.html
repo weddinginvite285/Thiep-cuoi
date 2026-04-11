@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bach &amp; Linh's Wedding Invitation</title>
     <meta property="og:title" content="Bach &amp; Linh's Wedding Invitation">
-    <meta name="description" content="Sự hiện diện của mọi người giúp cho ngày đám cưới của chúng mình trở nên trọn vẹn và đẹp đẽ hơn">
+    <meta name="description"
+        content="Sự hiện diện của mọi người giúp cho ngày đám cưới của chúng mình trở nên trọn vẹn và đẹp đẽ hơn">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
     <!-- Add to Calendar -->
     <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -40,6 +47,7 @@
             justify-content: flex-end;
             padding-bottom: 60px;
         }
+
         #section-cover-page img {
             position: absolute;
             inset: 0;
@@ -47,6 +55,7 @@
             height: 100%;
             object-fit: cover;
         }
+
         #section-cover-page .arrow {
             position: relative;
             z-index: 2;
@@ -58,6 +67,7 @@
             margin-bottom: 50px;
             overflow: hidden;
         }
+
         #section-about-us img {
             width: 100%;
             height: 100%;
@@ -74,6 +84,7 @@
             padding: 0 10px;
             box-sizing: border-box;
         }
+
         #content-carousel {
             height: 700px;
             position: relative;
@@ -81,8 +92,11 @@
             border-radius: 8px;
             width: 100%;
         }
+
         @media screen and (max-width: 768px) {
-            #content-carousel { height: 600px; }
+            #content-carousel {
+                height: 600px;
+            }
         }
 
         /* Label carousel - sits ABOVE carousel, not inside */
@@ -92,6 +106,7 @@
             align-items: center;
             margin-bottom: 0;
         }
+
         .label-carousel-wrap img {
             max-width: 100%;
             height: auto;
@@ -105,9 +120,13 @@
             height: 700px;
             width: 100%;
         }
+
         @media screen and (max-width: 768px) {
-            #content-carousel { height: 600px; }
+            #content-carousel {
+                height: 600px;
+            }
         }
+
         /* Track: all slides laid out horizontally */
         #carousel-track {
             display: flex;
@@ -116,6 +135,7 @@
             transition: transform 0.7s ease-in-out;
             will-change: transform;
         }
+
         /* Each slide is exactly 100% wide of the container */
         .carousel-slide {
             min-width: 100%;
@@ -124,6 +144,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .carousel-slide img {
             position: absolute;
             top: 50%;
@@ -142,6 +163,7 @@
             background-position: center top;
             background-color: var(--background-color);
         }
+
         #qr_groom {
             position: absolute;
             top: 33%;
@@ -149,6 +171,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
         #qr_bride {
             position: absolute;
             top: 75%;
@@ -156,6 +179,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+
         .qr-img {
             border-radius: 24px;
             width: 240px;
@@ -163,6 +187,7 @@
             background: white;
             padding: 4px;
         }
+
         .text_info_bank {
             margin-top: 8px;
             text-align: center;
@@ -181,15 +206,28 @@
             border-radius: 8px;
             margin: 16px;
         }
-        .wish-item-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+
+        .wish-item-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
 
         /* Attendance */
-        .attendance-opt { flex: 1; cursor: pointer; }
-        .attendance-opt input[type="radio"] { display: none; }
-        .attendance-opt input:checked + .option_border {
+        .attendance-opt {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .attendance-opt input[type="radio"] {
+            display: none;
+        }
+
+        .attendance-opt input:checked+.option_border {
             border: 2px solid #8f7748 !important;
             background: #fdf8f0;
         }
+
         .option_border {
             border: 1px solid #e8d5b0;
             border-radius: 8px;
@@ -198,33 +236,50 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-        .option_border:hover { border-color: #8f7748; background: #fdf8f0; }
+
+        .option_border:hover {
+            border-color: #8f7748;
+            background: #fdf8f0;
+        }
 
         /* Guest count */
-        .guest-count-label { flex:1; cursor:pointer; }
-        .guest-count-label input[type="radio"] { display:none; }
-        .guest-count-label input:checked + .guest-count-btn {
+        .guest-count-label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .guest-count-label input[type="radio"] {
+            display: none;
+        }
+
+        .guest-count-label input:checked+.guest-count-btn {
             background: #8f7748;
             color: white;
             border-color: #8f7748;
         }
+
         .guest-count-btn {
-            border:1px solid #e8d5b0;
-            border-radius:8px;
-            padding:10px;
-            font-family:Faustina,serif;
-            font-size:14px;
-            color:#606060;
-            text-align:center;
-            transition:all 0.3s;
+            border: 1px solid #e8d5b0;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: Faustina, serif;
+            font-size: 14px;
+            color: #606060;
+            text-align: center;
+            transition: all 0.3s;
         }
 
         /* Families */
-        #side_bride:checked ~ .side_bride,
-        #size_broom:checked ~ .size_broom {
+        #side_bride:checked~.side_bride,
+        #size_broom:checked~.size_broom {
             border: 2px solid var(--main-color);
         }
-        .side_bride, .size_broom { width: 150px; cursor: pointer; }
+
+        .side_bride,
+        .size_broom {
+            width: 150px;
+            cursor: pointer;
+        }
 
         /* Thank you / Map background images */
         .thankyou-section {
@@ -237,11 +292,15 @@
 
         /* Save the date */
         .save-the-date-section {
-            background-image: url('images/save_the_date.webp');
-            background-size: cover;
-            background-position: center;
-            min-height: 600px;
+            width: 100%;
             margin-bottom: 50px;
+            display: block;
+            line-height: 0;
+        }
+        .save-the-date-section img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Timeline */
@@ -260,7 +319,9 @@
             gap: 10px;
             margin: 25px 0;
         }
-        .divider-flower::before, .divider-flower::after {
+
+        .divider-flower::before,
+        .divider-flower::after {
             content: '';
             flex: 1;
             height: 1px;
@@ -268,7 +329,12 @@
         }
 
         /* Smile/Sad images */
-        .attend-icon { width: 70px; height: 70px; margin: 0 auto 8px; display: block; }
+        .attend-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 8px;
+            display: block;
+        }
 
         /* Map iframe */
         .map-container {
@@ -277,6 +343,7 @@
             margin: 16px;
             overflow: hidden;
         }
+
         .map-container iframe {
             width: 100%;
             height: 384px;
@@ -290,6 +357,7 @@
             gap: 8px;
             margin-top: 12px;
         }
+
         .photo-preview-item {
             width: calc(33.33% - 6px);
             aspect-ratio: 1;
@@ -297,354 +365,408 @@
             overflow: hidden;
             border: 2px solid #e8d5b0;
         }
-        .photo-preview-item img { width:100%; height:100%; object-fit:cover; }
+
+        .photo-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- ===== LOADING ===== -->
-<div id="loading_screen" class="back">
-    <div class="heart_loading"></div>
-</div>
-
-<!-- ===== INITIAL POPUP ===== -->
-<div id="initial_popup" onclick="openInvitation()">
-    <div id="evelope_card"></div>
-    <div class="bounce arrow"></div>
-</div>
-
-<!-- ===== INVITATION CARD (hidden initially) ===== -->
-<div id="invitation_card" style="display:none;">
-
-    <!-- Floating Hearts -->
-    <div id="hearts-container">
-        <div class="hearts heart" style="left:5%;animation-delay:0s;"></div>
-        <div class="hearts heart" style="left:15%;animation-delay:1.2s;"></div>
-        <div class="hearts heart" style="left:28%;animation-delay:2.4s;"></div>
-        <div class="hearts heart" style="left:42%;animation-delay:0.6s;"></div>
-        <div class="hearts heart" style="left:55%;animation-delay:1.8s;"></div>
-        <div class="hearts heart" style="left:68%;animation-delay:3s;"></div>
-        <div class="hearts heart" style="left:80%;animation-delay:0.9s;"></div>
-        <div class="hearts heart" style="left:92%;animation-delay:2.1s;"></div>
+    <!-- ===== LOADING ===== -->
+    <div id="loading_screen" class="back">
+        <div class="heart_loading"></div>
     </div>
 
-    <!-- Music -->
-    <div id="music_player" onclick="toggleMusic()" title="Bật/tắt nhạc"
-         style="position:fixed;bottom:70px;right:16px;z-index:50;width:44px;height:44px;
+    <!-- ===== INITIAL POPUP ===== -->
+    <div id="initial_popup" onclick="openInvitation()">
+        <div id="evelope_card"></div>
+        <div class="bounce arrow"></div>
+    </div>
+
+    <!-- ===== INVITATION CARD (hidden initially) ===== -->
+    <div id="invitation_card" style="display:none;">
+
+        <!-- Floating Hearts -->
+        <div id="hearts-container">
+            <div class="hearts heart" style="left:5%;animation-delay:0s;"></div>
+            <div class="hearts heart" style="left:15%;animation-delay:1.2s;"></div>
+            <div class="hearts heart" style="left:28%;animation-delay:2.4s;"></div>
+            <div class="hearts heart" style="left:42%;animation-delay:0.6s;"></div>
+            <div class="hearts heart" style="left:55%;animation-delay:1.8s;"></div>
+            <div class="hearts heart" style="left:68%;animation-delay:3s;"></div>
+            <div class="hearts heart" style="left:80%;animation-delay:0.9s;"></div>
+            <div class="hearts heart" style="left:92%;animation-delay:2.1s;"></div>
+        </div>
+
+        <!-- Music -->
+        <div id="music_player" onclick="toggleMusic()" title="Bật/tắt nhạc" style="position:fixed;bottom:70px;right:16px;z-index:50;width:44px;height:44px;
                 background:#8f7748;border-radius:50%;display:flex;align-items:center;
                 justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);">
-        <span id="music_icon" style="font-size:20px;color:white;">♫</span>
-    </div>
-    <audio id="bg_music" loop>
-        <source src="music/một đời.mp3" type="audio/mpeg">
-    </audio>
+            <span id="music_icon" style="font-size:20px;color:white;">♫</span>
+        </div>
+        <audio id="bg_music" loop>
+            <source src="music/một đời.mp3" type="audio/mpeg">
+        </audio>
 
-    <!-- ====== 1. COVER PAGE GIF ====== -->
-    <div id="section-cover-page">
-        <img src="images/cover_page.gif" alt="" loading="lazy">
-        <div class="arrow animated bounce"></div>
-    </div>
-
-    <!-- ====== 2. ABOUT US ====== -->
-    <div id="section-about-us">
-        <img src="images/about_us.gif" alt="" loading="lazy">
-    </div>
-
-    <!-- ====== 3. LABEL + CAROUSEL ====== -->
-    <div>
-        <!-- Label above carousel -->
-        <div class="label-carousel-wrap">
-            <img src="images/label_carousel.png" alt="" loading="lazy">
+        <!-- ====== 1. COVER PAGE GIF ====== -->
+        <div id="section-cover-page">
+            <img src="images/cover_page.gif" alt="" loading="lazy">
+            <div class="arrow animated bounce"></div>
         </div>
 
-        <!-- Carousel container -->
-        <div id="content-carousel">
-            <!-- Track: all slides in a single horizontal row -->
-            <div id="carousel-track">
-                <div class="carousel-slide"><img src="images/JAY_2188.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_1717.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_1935.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2052.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2374.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2407.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2671.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2831.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_2906.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_3163.webp" alt="Ảnh cưới" loading="lazy"></div>
-                <div class="carousel-slide"><img src="images/JAY_3334.webp" alt="Ảnh cưới" loading="lazy"></div>
-            </div>
-
-            <!-- Prev button -->
-            <button onclick="prevSlide()" type="button" aria-label="Prev"
-                style="position:absolute;top:0;left:0;z-index:30;height:100%;padding:0 16px;cursor:pointer;background:none;border:none;display:flex;align-items:center;">
-                <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.3);">
-                    <svg width="8" height="14" viewBox="0 0 6 10" fill="none"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
-                </span>
-            </button>
-
-            <!-- Next button -->
-            <button onclick="nextSlide()" type="button" aria-label="Next"
-                style="position:absolute;top:0;right:0;z-index:30;height:100%;padding:0 16px;cursor:pointer;background:none;border:none;display:flex;align-items:center;">
-                <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.3);">
-                    <svg width="8" height="14" viewBox="0 0 6 10" fill="none"><path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 9l4-4-4-4"/></svg>
-                </span>
-            </button>
-
-            <!-- Dots -->
-            <div id="carousel-dots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;"></div>
+        <!-- ====== 2. ABOUT US ====== -->
+        <div id="section-about-us">
+            <img src="images/about_us.gif" alt="" loading="lazy">
         </div>
-    </div>
 
-    <!-- ====== 4. COUNTDOWN ====== -->
-    <section style="padding:40px 20px;background:#efece9;text-align:center;">
-        <div class="text-inform" style="margin-bottom:20px;letter-spacing:2px;font-size:13px;">ĐẾM NGƯỢC TỚI NGÀY TRỌNG ĐẠI</div>
+        <!-- ====== 3. LABEL + CAROUSEL ====== -->
+        <div>
+            <!-- Label above carousel -->
+            <div class="label-carousel-wrap">
+                <img src="images/label_carousel.jpg" alt="" loading="lazy">
+            </div>
 
-        <div style="display:flex;justify-content:center;flex-wrap:wrap;margin:20px 0;">
-            <div class="countdown-panel">
-                <span class="number_countdown" id="days">00</span>
-                <span class="count-label">Ngày</span>
-            </div>
-            <div class="countdown-panel">
-                <span class="number_countdown" id="hours">00</span>
-                <span class="count-label">Giờ</span>
-            </div>
-            <div class="countdown-panel">
-                <span class="number_countdown" id="minutes">00</span>
-                <span class="count-label">Phút</span>
-            </div>
-            <div class="countdown-panel">
-                <span class="number_countdown" id="seconds">00</span>
-                <span class="count-label">Giây</span>
+            <!-- Carousel container -->
+            <div id="content-carousel">
+                <!-- Track: all slides in a single horizontal row -->
+                <div id="carousel-track">
+                    <div class="carousel-slide"><img src="images/JAY_2188.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_1717.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_1935.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2052.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2374.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2407.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2671.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2831.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_2906.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_3163.webp" alt="Ảnh cưới" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="images/JAY_3334.webp" alt="Ảnh cưới" loading="lazy"></div>
+                </div>
+
+                <!-- Prev button -->
+                <button onclick="prevSlide()" type="button" aria-label="Prev"
+                    style="position:absolute;top:0;left:0;z-index:30;height:100%;padding:0 16px;cursor:pointer;background:none;border:none;display:flex;align-items:center;">
+                    <span
+                        style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.3);">
+                        <svg width="8" height="14" viewBox="0 0 6 10" fill="none">
+                            <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Next button -->
+                <button onclick="nextSlide()" type="button" aria-label="Next"
+                    style="position:absolute;top:0;right:0;z-index:30;height:100%;padding:0 16px;cursor:pointer;background:none;border:none;display:flex;align-items:center;">
+                    <span
+                        style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.3);">
+                        <svg width="8" height="14" viewBox="0 0 6 10" fill="none">
+                            <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 9l4-4-4-4" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Dots -->
+                <div id="carousel-dots"
+                    style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;">
+                </div>
             </div>
         </div>
 
-        <div style="margin-top:20px;">
-            <add-to-calendar-button
-                id="btn_add_to_calendar"
-                name="Đám cưới Tuấn &amp; Trang"
-                description="Trân trọng kính mời đến tham dự lễ cưới!"
-                startDate="2025-09-20"
-                startTime="11:00"
-                endTime="14:00"
-                timeZone="Asia/Ho_Chi_Minh"
-                location="Trung tâm tiệc cưới, Hà Nội"
-                options="'Google','Apple','iCal'"
-                buttonStyle="round"
-                hideBranding
-            ></add-to-calendar-button>
-        </div>
-    </section>
+        <!-- ====== 4. COUNTDOWN ====== -->
+        <section style="padding:40px 20px;background:#efece9;text-align:center;">
+            <div class="text-inform" style="margin-bottom:20px;letter-spacing:2px;font-size:13px;">ĐẾM NGƯỢC TỚI NGÀY
+                TRỌNG ĐẠI</div>
 
-    <!-- ====== 5. SAVE THE DATE ====== -->
-    <div class="save-the-date-section"></div>
-
-    <!-- ====== 6. TIMELINE ====== -->
-    <div class="timeline-section"></div>
-
-    <!-- ====== 7. GIA ĐÌNH / ATTENDANCE ====== -->
-    <section style="padding:20px;background:#efece9;">
-        <div class="text-inform" style="margin-bottom:25px;text-align:center;letter-spacing:2px;font-size:13px;">XÁC NHẬN THAM DỰ</div>
-
-        <div style="background:white;border-radius:12px;padding:25px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;">
-            <div style="font-family:Faustina,serif;font-size:14px;color:#606060;text-align:center;margin-bottom:20px;line-height:1.8;">
-                Sự hiện diện của bạn sẽ là món quà quý giá nhất<br>dành cho chúng tôi trong ngày trọng đại này 💕
-            </div>
-
-            <!-- Họ nhà ai? -->
-            <div style="margin-bottom:15px;">
-                <label style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:8px;letter-spacing:1px;font-weight:600;">BẠN THUỘC VỀ...</label>
-                <div style="display:flex;gap:15px;justify-content:center;">
-                    <label style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-                        <input type="radio" id="size_broom" name="guest_side" value="groom" style="display:none;">
-                        <div class="size_broom" style="border:1px solid #e8d5b0;border-radius:8px;padding:12px;text-align:center;transition:all 0.3s;">
-                            <img src="images/groom.png" alt="Nhà trai" style="width:60px;height:60px;object-fit:cover;border-radius:50%;margin:0 auto 6px;display:block;">
-                            <div style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;">Nhà Trai</div>
-                        </div>
-                    </label>
-                    <label style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-                        <input type="radio" id="side_bride" name="guest_side" value="bride" style="display:none;">
-                        <div class="side_bride" style="border:1px solid #e8d5b0;border-radius:8px;padding:12px;text-align:center;transition:all 0.3s;">
-                            <img src="images/bride.png" alt="Nhà gái" style="width:60px;height:60px;object-fit:cover;border-radius:50%;margin:0 auto 6px;display:block;">
-                            <div style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;">Nhà Gái</div>
-                        </div>
-                    </label>
+            <div style="display:flex;justify-content:center;flex-wrap:wrap;margin:20px 0;">
+                <div class="countdown-panel">
+                    <span class="number_countdown" id="days">00</span>
+                    <span class="count-label">Ngày</span>
+                </div>
+                <div class="countdown-panel">
+                    <span class="number_countdown" id="hours">00</span>
+                    <span class="count-label">Giờ</span>
+                </div>
+                <div class="countdown-panel">
+                    <span class="number_countdown" id="minutes">00</span>
+                    <span class="count-label">Phút</span>
+                </div>
+                <div class="countdown-panel">
+                    <span class="number_countdown" id="seconds">00</span>
+                    <span class="count-label">Giây</span>
                 </div>
             </div>
 
-            <!-- Tên -->
-            <div style="margin-bottom:15px;">
-                <label style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:6px;letter-spacing:1px;font-weight:600;">TÊN CỦA BẠN</label>
-                <input type="text" id="guest_name" placeholder="Nhập tên của bạn..."
-                    style="width:100%;padding:12px 15px;border:1px solid #e8d5b0;border-radius:8px;
+            <div style="margin-top:20px;">
+                <add-to-calendar-button id="btn_add_to_calendar" name="Đám cưới Tuấn &amp; Trang"
+                    description="Trân trọng kính mời đến tham dự lễ cưới!" startDate="2025-09-20" startTime="11:00"
+                    endTime="14:00" timeZone="Asia/Ho_Chi_Minh" location="Trung tâm tiệc cưới, Hà Nội"
+                    options="'Google','Apple','iCal'" buttonStyle="round" hideBranding></add-to-calendar-button>
+            </div>
+        </section>
+
+        <!-- ====== 5. SAVE THE DATE ====== -->
+        <div class="save-the-date-section">
+            <img src="images/save_the_date.jpg" alt="Save The Date" loading="lazy">
+        </div>
+
+        <!-- ====== 6. TIMELINE ====== -->
+        <div class="timeline-section"></div>
+
+        <!-- ====== 7. GIA ĐÌNH / ATTENDANCE ====== -->
+        <section style="padding:20px;background:#efece9;">
+            <div class="text-inform" style="margin-bottom:25px;text-align:center;letter-spacing:2px;font-size:13px;">XÁC
+                NHẬN THAM DỰ</div>
+
+            <div
+                style="background:white;border-radius:12px;padding:25px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;">
+                <div
+                    style="font-family:Faustina,serif;font-size:14px;color:#606060;text-align:center;margin-bottom:20px;line-height:1.8;">
+                    Sự hiện diện của bạn sẽ là món quà quý giá nhất<br>dành cho chúng tôi trong ngày trọng đại này 💕
+                </div>
+
+                <!-- Họ nhà ai? -->
+                <div style="margin-bottom:15px;">
+                    <label
+                        style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:8px;letter-spacing:1px;font-weight:600;">BẠN
+                        THUỘC VỀ...</label>
+                    <div style="display:flex;gap:15px;justify-content:center;">
+                        <label style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+                            <input type="radio" id="size_broom" name="guest_side" value="groom" style="display:none;">
+                            <div class="size_broom"
+                                style="border:1px solid #e8d5b0;border-radius:8px;padding:12px;text-align:center;transition:all 0.3s;">
+                                <img src="images/groom.png" alt="Nhà trai"
+                                    style="width:60px;height:60px;object-fit:cover;border-radius:50%;margin:0 auto 6px;display:block;">
+                                <div style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;">
+                                    Nhà Trai</div>
+                            </div>
+                        </label>
+                        <label style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
+                            <input type="radio" id="side_bride" name="guest_side" value="bride" style="display:none;">
+                            <div class="side_bride"
+                                style="border:1px solid #e8d5b0;border-radius:8px;padding:12px;text-align:center;transition:all 0.3s;">
+                                <img src="images/bride.png" alt="Nhà gái"
+                                    style="width:60px;height:60px;object-fit:cover;border-radius:50%;margin:0 auto 6px;display:block;">
+                                <div style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;">
+                                    Nhà Gái</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tên -->
+                <div style="margin-bottom:15px;">
+                    <label
+                        style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:6px;letter-spacing:1px;font-weight:600;">TÊN
+                        CỦA BẠN</label>
+                    <input type="text" id="guest_name" placeholder="Nhập tên của bạn..." style="width:100%;padding:12px 15px;border:1px solid #e8d5b0;border-radius:8px;
                            font-family:Faustina,serif;font-size:14px;color:#606060;background:#fafafa;outline:none;">
-            </div>
+                </div>
 
-            <!-- Có tham dự? -->
-            <div style="margin-bottom:15px;">
-                <label style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:10px;letter-spacing:1px;font-weight:600;">BẠN CÓ THAM DỰ KHÔNG?</label>
-                <div style="display:flex;gap:15px;">
-                    <label class="attendance-opt">
-                        <input type="radio" name="attendance" value="yes" id="guest_comming_yes">
-                        <div class="option_border">
-                            <img src="images/smile_square.png" alt="" class="attend-icon">
-                            <div style="font-family:Faustina,serif;font-size:13px;color:#8f7748;font-weight:600;">Có, tôi sẽ đến</div>
-                        </div>
-                    </label>
-                    <label class="attendance-opt">
-                        <input type="radio" name="attendance" value="no" id="guest_comming_no">
-                        <div class="option_border">
-                            <img src="images/sad_square.png" alt="" class="attend-icon">
-                            <div style="font-family:Faustina,serif;font-size:13px;color:#8f7748;font-weight:600;">Xin lỗi, tôi bận</div>
-                        </div>
-                    </label>
+                <!-- Có tham dự? -->
+                <div style="margin-bottom:15px;">
+                    <label
+                        style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:10px;letter-spacing:1px;font-weight:600;">BẠN
+                        CÓ THAM DỰ KHÔNG?</label>
+                    <div style="display:flex;gap:15px;">
+                        <label class="attendance-opt">
+                            <input type="radio" name="attendance" value="yes" id="guest_comming_yes">
+                            <div class="option_border">
+                                <img src="images/smile_square.png" alt="" class="attend-icon">
+                                <div style="font-family:Faustina,serif;font-size:13px;color:#8f7748;font-weight:600;">
+                                    Có, tôi sẽ đến</div>
+                            </div>
+                        </label>
+                        <label class="attendance-opt">
+                            <input type="radio" name="attendance" value="no" id="guest_comming_no">
+                            <div class="option_border">
+                                <img src="images/sad_square.png" alt="" class="attend-icon">
+                                <div style="font-family:Faustina,serif;font-size:13px;color:#8f7748;font-weight:600;">
+                                    Xin lỗi, tôi bận</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Số người -->
+                <div id="guests_count_section" style="margin-bottom:15px;display:none;">
+                    <label
+                        style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:8px;letter-spacing:1px;font-weight:600;">SỐ
+                        NGƯỜI ĐI CÙNG</label>
+                    <div style="display:flex;gap:8px;">
+                        <label class="guest-count-label"><input type="radio" name="guest_count" value="1">
+                            <div class="guest-count-btn">1</div>
+                        </label>
+                        <label class="guest-count-label"><input type="radio" name="guest_count" value="2">
+                            <div class="guest-count-btn">2</div>
+                        </label>
+                        <label class="guest-count-label"><input type="radio" name="guest_count" value="3">
+                            <div class="guest-count-btn">3</div>
+                        </label>
+                        <label class="guest-count-label"><input type="radio" name="guest_count" value="4+">
+                            <div class="guest-count-btn">4+</div>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn-send" id="btn_confirm" onclick="submitConfirmation()"
+                    style="width:100%;cursor:pointer;font-family:Faustina,serif;">
+                    Gửi xác nhận 💌
+                </button>
+
+                <div id="confirm_success"
+                    style="display:none;text-align:center;padding:20px;background:#fdf8f0;border-radius:8px;margin-top:15px;border:1px solid #e8d5b0;">
+                    <div style="font-size:28px;margin-bottom:8px;">✅</div>
+                    <div style="font-family:Faustina,serif;font-size:14px;color:#8f7748;font-weight:600;">Cảm ơn bạn đã
+                        xác nhận!</div>
+                    <div style="font-family:Faustina,serif;font-size:13px;color:#a07855;margin-top:5px;">Chúng tôi rất
+                        vui được gặp bạn 🎉</div>
                 </div>
             </div>
 
-            <!-- Số người -->
-            <div id="guests_count_section" style="margin-bottom:15px;display:none;">
-                <label style="font-family:Faustina,serif;font-size:12px;color:#8f7748;display:block;margin-bottom:8px;letter-spacing:1px;font-weight:600;">SỐ NGƯỜI ĐI CÙNG</label>
-                <div style="display:flex;gap:8px;">
-                    <label class="guest-count-label"><input type="radio" name="guest_count" value="1"><div class="guest-count-btn">1</div></label>
-                    <label class="guest-count-label"><input type="radio" name="guest_count" value="2"><div class="guest-count-btn">2</div></label>
-                    <label class="guest-count-label"><input type="radio" name="guest_count" value="3"><div class="guest-count-btn">3</div></label>
-                    <label class="guest-count-label"><input type="radio" name="guest_count" value="4+"><div class="guest-count-btn">4+</div></label>
+            <div class="divider-flower">✿</div>
+        </section>
+
+        <!-- ====== 8. SỔ LƯU BÚT ====== -->
+        <section style="padding:20px;background:#efece9;">
+            <div class="text-inform" style="margin-bottom:20px;text-align:center;letter-spacing:2px;font-size:13px;">SỔ
+                LƯU BÚT</div>
+
+            <!-- Wish list -->
+            <div id="div_list_wish">
+                <div id="wish_list_container"></div>
+            </div>
+
+            <!-- Write wish -->
+            <div
+                style="background:white;border-radius:12px;padding:20px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;margin-top:16px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                    <img src="images/icon_pencil.png" alt="" style="width:22px;height:22px;">
+                    <span
+                        style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;letter-spacing:1px;">GỬI
+                        LỜI CHÚC</span>
+                </div>
+                <input type="text" id="wish_name" placeholder="Tên của bạn..."
+                    style="width:100%;padding:11px 14px;border:1px solid #e8d5b0;border-radius:8px;font-family:Faustina,serif;font-size:14px;color:#606060;background:#fafafa;outline:none;margin-bottom:10px;">
+                <textarea id="wish_content" placeholder="Gửi lời chúc đến cô dâu chú rể..." rows="3"
+                    style="width:100%;padding:11px 14px;border:1px solid #e8d5b0;border-radius:8px;font-family:Faustina,serif;font-size:14px;color:#606060;background:#fafafa;outline:none;resize:none;"></textarea>
+                <button class="btn-send" onclick="submitWish()"
+                    style="width:100%;cursor:pointer;font-family:Faustina,serif;">
+                    Gửi lời chúc 💝
+                </button>
+            </div>
+
+            <div class="divider-flower">✿</div>
+        </section>
+
+        <!-- ====== 9. QR MỪNG CƯỚI ====== -->
+        <section id="section_qr_bank" class="card-section">
+            <!-- QR Chú rể (top 1/3) -->
+            <div id="qr_groom">
+                <img src="images/qr_tuan_trim.webp" alt="QR Chú rể" class="qr-img">
+                <div class="text_info_bank">
+                    <span style="display:block;">Nguyen Anh Tuan</span>
+                    <br>
+                    <span style="display:block;">TpBank</span>
                 </div>
             </div>
 
-            <button class="btn-send" id="btn_confirm" onclick="submitConfirmation()" style="width:100%;cursor:pointer;font-family:Faustina,serif;">
-                Gửi xác nhận 💌
-            </button>
-
-            <div id="confirm_success" style="display:none;text-align:center;padding:20px;background:#fdf8f0;border-radius:8px;margin-top:15px;border:1px solid #e8d5b0;">
-                <div style="font-size:28px;margin-bottom:8px;">✅</div>
-                <div style="font-family:Faustina,serif;font-size:14px;color:#8f7748;font-weight:600;">Cảm ơn bạn đã xác nhận!</div>
-                <div style="font-family:Faustina,serif;font-size:13px;color:#a07855;margin-top:5px;">Chúng tôi rất vui được gặp bạn 🎉</div>
+            <!-- QR Cô dâu (top 3/4) -->
+            <div id="qr_bride">
+                <img src="images/qr_trang_trim.webp" alt="QR Cô dâu" class="qr-img">
+                <div class="text_info_bank">
+                    <span style="display:block;">Nguyen Thi Minh Trang</span>
+                    <br>
+                    <span style="display:block;">TpBank</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="divider-flower">✿</div>
-    </section>
-
-    <!-- ====== 8. SỔ LƯU BÚT ====== -->
-    <section style="padding:20px;background:#efece9;">
-        <div class="text-inform" style="margin-bottom:20px;text-align:center;letter-spacing:2px;font-size:13px;">SỔ LƯU BÚT</div>
-
-        <!-- Wish list -->
-        <div id="div_list_wish">
-            <div id="wish_list_container"></div>
-        </div>
-
-        <!-- Write wish -->
-        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;margin-top:16px;">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-                <img src="images/icon_pencil.png" alt="" style="width:22px;height:22px;">
-                <span style="font-family:Faustina,serif;font-size:12px;color:#8f7748;font-weight:600;letter-spacing:1px;">GỬI LỜI CHÚC</span>
+        <!-- ====== 10. GOOGLE MAPS ====== -->
+        <section style="background:#efece9;padding:20px 0;">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.832115740616!2d105.82817387647903!3d20.999365788785076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac7d096886fb%3A0x8760dc7a78ec917!2zVHLhu5FuZyDEkOG7k25nIEPhuqNuaCBI4buT!5e0!3m2!1sen!2s!4v1724600639614!5m2!1sen!2s"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-            <input type="text" id="wish_name" placeholder="Tên của bạn..."
-                style="width:100%;padding:11px 14px;border:1px solid #e8d5b0;border-radius:8px;font-family:Faustina,serif;font-size:14px;color:#606060;background:#fafafa;outline:none;margin-bottom:10px;">
-            <textarea id="wish_content" placeholder="Gửi lời chúc đến cô dâu chú rể..." rows="3"
-                style="width:100%;padding:11px 14px;border:1px solid #e8d5b0;border-radius:8px;font-family:Faustina,serif;font-size:14px;color:#606060;background:#fafafa;outline:none;resize:none;"></textarea>
-            <button class="btn-send" onclick="submitWish()" style="width:100%;cursor:pointer;font-family:Faustina,serif;">
-                Gửi lời chúc 💝
-            </button>
-        </div>
+        </section>
 
-        <div class="divider-flower">✿</div>
-    </section>
-
-    <!-- ====== 9. QR MỪNG CƯỚI ====== -->
-    <section id="section_qr_bank" class="card-section">
-        <!-- QR Chú rể (top 1/3) -->
-        <div id="qr_groom">
-            <img src="images/qr_tuan_trim.webp" alt="QR Chú rể" class="qr-img">
-            <div class="text_info_bank">
-                <span style="display:block;">Nguyen Anh Tuan</span>
-                <br>
-                <span style="display:block;">TpBank</span>
+        <!-- ====== 11. CHIA SẺ ẢNH ====== -->
+        <section style="padding:20px;background:#efece9;">
+            <div class="text-inform" style="margin-bottom:15px;text-align:center;letter-spacing:2px;font-size:13px;">
+                CHIA SẺ KỶ NIỆM</div>
+            <div
+                style="font-family:Faustina,serif;font-size:14px;color:#606060;text-align:center;margin-bottom:20px;line-height:1.8;">
+                Hãy chia sẻ những khoảnh khắc đẹp! 🌸
             </div>
-        </div>
-
-        <!-- QR Cô dâu (top 3/4) -->
-        <div id="qr_bride">
-            <img src="images/qr_trang_trim.webp" alt="QR Cô dâu" class="qr-img">
-            <div class="text_info_bank">
-                <span style="display:block;">Nguyen Thi Minh Trang</span>
-                <br>
-                <span style="display:block;">TpBank</span>
+            <div
+                style="background:white;border-radius:12px;padding:25px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;text-align:center;">
+                <img src="images/icon_pencil.png" alt=""
+                    style="width:36px;height:36px;margin:0 auto 10px;display:block;opacity:0.5;">
+                <div style="font-family:Faustina,serif;font-size:14px;color:#8f7748;margin-bottom:15px;">Tải ảnh kỷ niệm
+                    lên</div>
+                <label
+                    style="display:inline-block;background:#8f7748;color:white;padding:12px 25px;border-radius:8px;cursor:pointer;font-family:Faustina,serif;font-size:14px;font-weight:600;">
+                    <input type="file" accept="image/*" style="display:none;" onchange="handlePhotoUpload(this)">
+                    📷 Chọn ảnh
+                </label>
+                <div id="photo_preview_section"></div>
             </div>
-        </div>
-    </section>
+            <div class="divider-flower">✿</div>
+        </section>
 
-    <!-- ====== 10. GOOGLE MAPS ====== -->
-    <section style="background:#efece9;padding:20px 0;">
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.832115740616!2d105.82817387647903!3d20.999365788785076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac7d096886fb%3A0x8760dc7a78ec917!2zVHLhu5FuZyDEkOG7k25nIEPhuqNuaCBI4buT!5e0!3m2!1sen!2s!4v1724600639614!5m2!1sen!2s"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </section>
+        <!-- ====== 12. THANK YOU ====== -->
+        <div class="thankyou-section"></div>
 
-    <!-- ====== 11. CHIA SẺ ẢNH ====== -->
-    <section style="padding:20px;background:#efece9;">
-        <div class="text-inform" style="margin-bottom:15px;text-align:center;letter-spacing:2px;font-size:13px;">CHIA SẺ KỶ NIỆM</div>
-        <div style="font-family:Faustina,serif;font-size:14px;color:#606060;text-align:center;margin-bottom:20px;line-height:1.8;">
-            Hãy chia sẻ những khoảnh khắc đẹp! 🌸
-        </div>
-        <div style="background:white;border-radius:12px;padding:25px;box-shadow:0 2px 15px rgba(143,119,72,0.12);border:1px solid #e8d5b0;text-align:center;">
-            <img src="images/icon_pencil.png" alt="" style="width:36px;height:36px;margin:0 auto 10px;display:block;opacity:0.5;">
-            <div style="font-family:Faustina,serif;font-size:14px;color:#8f7748;margin-bottom:15px;">Tải ảnh kỷ niệm lên</div>
-            <label style="display:inline-block;background:#8f7748;color:white;padding:12px 25px;border-radius:8px;cursor:pointer;font-family:Faustina,serif;font-size:14px;font-weight:600;">
-                <input type="file" accept="image/*" style="display:none;" onchange="handlePhotoUpload(this)">
-                📷 Chọn ảnh
-            </label>
-            <div id="photo_preview_section"></div>
-        </div>
-        <div class="divider-flower">✿</div>
-    </section>
+        <!-- ====== FOOTER ====== -->
+        <footer style="background:#8f7748;padding:40px 20px;text-align:center;color:white;">
+            <div
+                style="font-family:'Pinyon Script',cursive;font-size:56px;color:rgba(255,255,255,0.95);line-height:1.1;margin-bottom:10px;">
+                Tuấn &amp; Trang
+            </div>
+            <div
+                style="font-family:'Dancing Script',cursive;font-size:18px;color:rgba(255,255,255,0.85);margin-bottom:15px;letter-spacing:3px;">
+                20 . 09 . 2025
+            </div>
+            <div style="width:60px;height:1px;background:rgba(255,255,255,0.4);margin:15px auto;"></div>
+            <div
+                style="font-family:Faustina,serif;font-size:13px;color:rgba(255,255,255,0.75);letter-spacing:1px;line-height:1.8;">
+                Cảm ơn bạn đã đến chung vui cùng chúng tôi 💕
+            </div>
+            <div style="margin-top:15px;font-size:20px;">🌸 ❤️ 🌸</div>
+        </footer>
 
-    <!-- ====== 12. THANK YOU ====== -->
-    <div class="thankyou-section"></div>
+    </div><!-- end #invitation_card -->
 
-    <!-- ====== FOOTER ====== -->
-    <footer style="background:#8f7748;padding:40px 20px;text-align:center;color:white;">
-        <div style="font-family:'Pinyon Script',cursive;font-size:56px;color:rgba(255,255,255,0.95);line-height:1.1;margin-bottom:10px;">
-            Tuấn &amp; Trang
-        </div>
-        <div style="font-family:'Dancing Script',cursive;font-size:18px;color:rgba(255,255,255,0.85);margin-bottom:15px;letter-spacing:3px;">
-            20 . 09 . 2025
-        </div>
-        <div style="width:60px;height:1px;background:rgba(255,255,255,0.4);margin:15px auto;"></div>
-        <div style="font-family:Faustina,serif;font-size:13px;color:rgba(255,255,255,0.75);letter-spacing:1px;line-height:1.8;">
-            Cảm ơn bạn đã đến chung vui cùng chúng tôi 💕
-        </div>
-        <div style="margin-top:15px;font-size:20px;">🌸 ❤️ 🌸</div>
-    </footer>
+    <!-- Toast -->
+    <div id="toast"></div>
 
-</div><!-- end #invitation_card -->
+    <script src="script.js"></script>
+    <script>
+        // Set correct slide count
+        totalSlides = 11;
 
-<!-- Toast -->
-<div id="toast"></div>
-
-<script src="script.js"></script>
-<script>
-    // Set correct slide count
-    totalSlides = 11;
-
-    // Build carousel dots
-    (function() {
-        var dotsContainer = document.getElementById('carousel-dots');
-        if (!dotsContainer) return;
-        for (var i = 0; i < totalSlides; i++) {
-            var btn = document.createElement('button');
-            btn.style.cssText = 'width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.7);border:none;cursor:pointer;transition:all 0.3s;padding:0;flex-shrink:0;';
-            if (i === 0) { btn.style.background = 'white'; btn.style.transform = 'scale(1.3)'; }
-            (function(idx) {
-                btn.onclick = function() { goToSlide(idx); };
-            })(i);
-            dotsContainer.appendChild(btn);
-        }
-    })();
-</script>
+        // Build carousel dots
+        (function () {
+            var dotsContainer = document.getElementById('carousel-dots');
+            if (!dotsContainer) return;
+            for (var i = 0; i < totalSlides; i++) {
+                var btn = document.createElement('button');
+                btn.style.cssText = 'width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.7);border:none;cursor:pointer;transition:all 0.3s;padding:0;flex-shrink:0;';
+                if (i === 0) { btn.style.background = 'white'; btn.style.transform = 'scale(1.3)'; }
+                (function (idx) {
+                    btn.onclick = function () { goToSlide(idx); };
+                })(i);
+                dotsContainer.appendChild(btn);
+            }
+        })();
+    </script>
 </body>
+
 </html>
