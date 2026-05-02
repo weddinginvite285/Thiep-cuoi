@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
     max-width: 520px;
     margin: auto;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 pre {
@@ -206,8 +208,13 @@ pre {
 }
 
 @keyframes popupFadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 #evelope_card {
@@ -228,7 +235,7 @@ pre {
 #hand_click_icon {
     position: absolute;
     top: 65%;
-    left: 62%;
+    left: 60%;
     transform: translate(-50%, -50%);
     width: 55px;
     height: auto;
@@ -239,8 +246,15 @@ pre {
 }
 
 @keyframes handBounce {
-    0%, 100% { transform: translate(-50%, -50%) translateY(0);     }
-    50%       { transform: translate(-50%, -50%) translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
 }
 
 /* ========== TEXT STYLES ========== */
