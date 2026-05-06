@@ -392,10 +392,7 @@ input[type="radio"]:checked+.guest-count-btn {
 }
 
 .wish-list-item {
-    background-image: url('images/bg_wish_list.webp');
-    background-size: 350px 100px;
-    background-position: top right;
-    background-repeat: no-repeat;
+    background-color: #ffffff;
     transition: background-color 0.2s;
 }
 
