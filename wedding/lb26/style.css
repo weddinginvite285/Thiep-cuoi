@@ -40,7 +40,7 @@ body {
     background-color: var(--background-color);
     color: var(--main-color);
     font-family: Faustina, serif;
-    max-width: min(520px, 90vw);
+    max-width: min(520px, 100vw);
     /* Không bao giờ vượt quá chiều rộng màn hình */
     margin: auto;
     min-height: 100vh;
