@@ -18,12 +18,12 @@ function fetchWishesFromSheets(silent) {
         container.innerHTML = '<div style="text-align:center;padding:20px;font-family:Faustina,serif;color:#a07855;font-size:13px;">Đang tải lời chúc... 💫</div>';
     }
     fetch(GAS_URL)
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            wishes = Array.isArray(data) ? data.filter(function(w) { return w.name && w.content; }) : [];
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            wishes = Array.isArray(data) ? data.filter(function (w) { return w.name && w.content; }) : [];
             renderWishList();
         })
-        .catch(function() {
+        .catch(function () {
             if (!silent) { wishes = []; renderWishList(); }
         });
 }
@@ -34,9 +34,9 @@ function postWishToSheets(wish) {
         method: 'POST',
         body: JSON.stringify(wish),
         headers: { 'Content-Type': 'text/plain' }
-    }).then(function() {
+    }).then(function () {
         fetchWishesFromSheets(true); // silent: không hiện loading
-    }).catch(function() { /* ignore */ });
+    }).catch(function () { /* ignore */ });
 }
 
 
@@ -90,7 +90,7 @@ function openInvitation() {
 function updateCountdown() {
     const now = new Date();
     let diff = WEDDING_DATE - now;
-    
+
     const titleEl = document.getElementById('countdown-title');
 
     if (diff < 0) {
@@ -126,9 +126,9 @@ function updateCarousel() {
         track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
     }
     // Update dots
-    document.querySelectorAll('#carousel-dots button').forEach(function(dot, idx) {
+    document.querySelectorAll('#carousel-dots button').forEach(function (dot, idx) {
         dot.style.background = idx === currentSlide ? 'white' : 'rgba(255,255,255,0.7)';
-        dot.style.transform   = idx === currentSlide ? 'scale(1.3)' : 'scale(1)';
+        dot.style.transform = idx === currentSlide ? 'scale(1.3)' : 'scale(1)';
     });
 }
 
@@ -152,7 +152,7 @@ function goToSlide(n) {
 
 function startCarousel() {
     clearInterval(carouselInterval);
-    carouselInterval = setInterval(function() {
+    carouselInterval = setInterval(function () {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
     }, 4000);
@@ -160,7 +160,7 @@ function startCarousel() {
 
 function resetAutoplay() {
     clearInterval(carouselInterval);
-    carouselInterval = setInterval(function() {
+    carouselInterval = setInterval(function () {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
     }, 4000);
@@ -287,7 +287,7 @@ function submitConfirmation() {
             attending: attending ? 'Có đến' : 'Không đến'
         }),
         headers: { 'Content-Type': 'text/plain' }
-    }).catch(function() { /* ignore network error */ });
+    }).catch(function () { /* ignore network error */ });
 
     // Hiện thông báo thành công
     setTimeout(function () {
@@ -355,7 +355,7 @@ function renderWishList() {
     container.innerHTML = wishes.map(wish => `
         <div class="wish-list-item" style="padding:15px; border-bottom:1px solid #f0e8d0;">
             <div style="display:flex; align-items:flex-start; gap:10px;">
-                <img src="images/stamp.jpg" alt="" style="width:36px; height:36px; border-radius:50%; flex-shrink:0; object-fit:cover;">
+                <img src="images/stamp.webp" alt="" style="width:36px; height:36px; border-radius:50%; flex-shrink:0; object-fit:cover;">
                 <div style="flex:1;">
                     <div style="font-family:Faustina, serif; font-weight:700; font-size:14px; color:#8f7748;">${escapeHtml(wish.name)}</div>
                     <div style="font-family:Faustina, serif; font-size:13px; color:#606060; margin-top:4px; line-height:1.6;">${escapeHtml(wish.content)}</div>
@@ -480,6 +480,6 @@ document.addEventListener('visibilitychange', function () {
 
     // Khi quay lại tab → phát tiếp nếu trước đó đang chạy (một số trình duyệt tự pause)
     if (!document.hidden && musicPlaying) {
-        music.play().catch(() => {});
+        music.play().catch(() => { });
     }
 });
