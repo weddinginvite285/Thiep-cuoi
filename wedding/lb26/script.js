@@ -473,20 +473,13 @@ document.addEventListener('DOMContentLoaded', function () {
     renderWishList();
 });
 
-// ========== PAUSE MUSIC WHEN LEAVING PAGE ==========
+// ========== RESUME MUSIC WHEN RETURNING TO PAGE ==========
 document.addEventListener('visibilitychange', function () {
     const music = document.getElementById('bg_music');
     if (!music) return;
 
-    if (document.hidden) {
-        // Tab/app bị ẩn → tạm dừng nhạc
-        if (musicPlaying) {
-            music.pause();
-        }
-    } else {
-        // Quay lại → phát tiếp nếu trước đó đang chạy
-        if (musicPlaying) {
-            music.play().catch(() => {});
-        }
+    // Khi quay lại tab → phát tiếp nếu trước đó đang chạy (một số trình duyệt tự pause)
+    if (!document.hidden && musicPlaying) {
+        music.play().catch(() => {});
     }
 });
