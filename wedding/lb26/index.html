@@ -184,10 +184,8 @@
 
         /* QR section */
         #section_qr_bank {
-            background-image: url('images/bg_qr_bank.webp');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: top center;
+            position: relative;
+            overflow: hidden;
             background-color: var(--background-color);
             display: flex;
             flex-direction: column;
@@ -196,8 +194,19 @@
             padding: 55% 20px 60px;
         }
 
+        #section_qr_bank .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
         #qr_groom,
         #qr_bride {
+            position: relative;
+            z-index: 1;
             text-align: center;
         }
 
@@ -693,6 +702,7 @@
 
         <!-- ====== 9. QR MỪNG CƯỚI ====== -->
         <section id="section_qr_bank">
+            <img src="images/bg_qr_bank.webp" class="bg-img" alt="" loading="lazy">
             <!-- QR Chú rể -->
             <div id="qr_groom">
                 <img src="images/qr_groom.webp" alt="QR Chú rể" class="qr-img">
