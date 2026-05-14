@@ -329,7 +329,7 @@ function submitWish() {
     const colors = ['#d4b896', '#c9a87c', '#b8956a', '#e8d5b0', '#a07855'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     const now = new Date();
-    const timeStr = now.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
+    const timeStr = now.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
     const wish = { name, content, time: timeStr, color: randomColor };
 
     // Hiển thị ngay (optimistic UI)
